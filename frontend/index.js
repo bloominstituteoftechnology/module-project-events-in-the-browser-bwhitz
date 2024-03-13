@@ -2,12 +2,13 @@
 function moduleProject2() {
   // 👇 WORK WORK BELOW THIS LINE 👇
   let startTime = new Date().getTime() // Record start time
+  
 
   function getTimeElapsed() { // To be used at end of game to get elapsed time
     let currentTime = new Date().getTime()
-    return currentTime - startTime
+    return currentTime - startTime 
   }
-
+  
   // Setting up the footer content
   let footer = document.querySelector('footer')
   let currentYear = new Date().getFullYear()
@@ -37,9 +38,16 @@ function moduleProject2() {
       row.appendChild(square)
       square.addEventListener('click', () => {
         // 👉 TASK 2 - Use a click handler to target a square 👈
+        
+        if(!square.classList.contains('targeted')) {
+          document.querySelector('.targeted').classList.remove('targeted')
+          square.classList.add('targeted')
+        }    
       })
     }
   }
+
+  
   document.querySelector('.row:nth-child(3)')
     .children[2].classList.add('targeted') // Initial square being targeted
 
@@ -69,6 +77,7 @@ function moduleProject2() {
     // 👉 TASK 4 - Use the space bar to exterminate a mosquito 👈
 
     // 👉 TASK 5 - End the game 👈
+ 
   })
   // 👆 WORK WORK ABOVE THIS LINE 👆
 }
